@@ -1,0 +1,29 @@
+[gd_resource type="Resource" script_class="MapResource" load_steps=6 format=3 uid="uid://d123jkfry5c5c"]
+
+[ext_resource type="Script" path="res://src/MapPropertyResource.cs" id="1_jonmt"]
+[ext_resource type="Script" path="res://src/MapResource.cs" id="1_oigli"]
+
+[sub_resource type="Resource" id="Resource_ev8w7"]
+script = ExtResource("1_jonmt")
+Frequency = 0.01
+FractalOctaves = 3
+
+[sub_resource type="Resource" id="Resource_8sepb"]
+script = ExtResource("1_jonmt")
+Frequency = 0.01
+FractalOctaves = 5
+
+[sub_resource type="Resource" id="Resource_xf37g"]
+script = ExtResource("1_jonmt")
+Frequency = 0.01
+FractalOctaves = 5
+
+[resource]
+script = ExtResource("1_oigli")
+NoiseType = 0
+AltitudeTreshold = 0.1
+TemperatureTreshold = 0.8
+MoistureTreshold = 0.5
+Altitude = SubResource("Resource_ev8w7")
+Temperature = SubResource("Resource_xf37g")
+Moisture = SubResource("Resource_8sepb")
