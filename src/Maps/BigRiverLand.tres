@@ -1,0 +1,31 @@
+[gd_resource type="Resource" script_class="MapResource" load_steps=6 format=3 uid="uid://pxylge5ktwed"]
+
+[ext_resource type="Script" path="res://src/MapPropertyResource.cs" id="1_d038f"]
+[ext_resource type="Script" path="res://src/MapResource.cs" id="2_3lukb"]
+
+[sub_resource type="Resource" id="Resource_ou4qw"]
+script = ExtResource("1_d038f")
+Frequency = 0.473
+FractalOctaves = 3
+
+[sub_resource type="Resource" id="Resource_qudq1"]
+script = ExtResource("1_d038f")
+Frequency = 0.0
+FractalOctaves = 0
+
+[sub_resource type="Resource" id="Resource_3ho2g"]
+script = ExtResource("1_d038f")
+Frequency = 1.614
+FractalOctaves = 3
+
+[resource]
+script = ExtResource("2_3lukb")
+NoiseType = 3
+FractalType = 1
+AltitudeTreshold = 0.048
+TemperatureTreshold = 0.477
+MoistureTreshold = 0.5
+Altitude = SubResource("Resource_ou4qw")
+Temperature = SubResource("Resource_3ho2g")
+Moisture = SubResource("Resource_qudq1")
+SandMultiplier = 1.415

@@ -1,29 +1,29 @@
-[gd_resource type="Resource" script_class="MapResource" load_steps=6 format=3 uid="uid://d123jkfry5c5c"]
+[gd_resource type="Resource" script_class="MapResource" load_steps=6 format=3 uid="uid://cg2c4wd51xo7h"]
 
-[ext_resource type="Script" path="res://src/MapPropertyResource.cs" id="1_jonmt"]
-[ext_resource type="Script" path="res://src/MapResource.cs" id="1_oigli"]
+[ext_resource type="Script" path="res://src/MapPropertyResource.cs" id="1_g6465"]
+[ext_resource type="Script" path="res://src/MapResource.cs" id="2_2t0kb"]
 
 [sub_resource type="Resource" id="Resource_ev8w7"]
-script = ExtResource("1_jonmt")
+script = ExtResource("1_g6465")
 Frequency = 0.43
 FractalOctaves = 1
 
 [sub_resource type="Resource" id="Resource_8sepb"]
-script = ExtResource("1_jonmt")
+script = ExtResource("1_g6465")
 Frequency = 0.92
 FractalOctaves = 5
 
 [sub_resource type="Resource" id="Resource_xf37g"]
-script = ExtResource("1_jonmt")
+script = ExtResource("1_g6465")
 Frequency = 0.789
 FractalOctaves = 2
 
 [resource]
-script = ExtResource("1_oigli")
+script = ExtResource("2_2t0kb")
 NoiseType = 1
 FractalType = 1
 AltitudeTreshold = 0.063
-TemperatureTreshold = 0.875
+TemperatureTreshold = 0.979
 MoistureTreshold = 0.5
 Altitude = SubResource("Resource_ev8w7")
 Temperature = SubResource("Resource_xf37g")
