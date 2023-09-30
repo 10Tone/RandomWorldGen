@@ -1,0 +1,54 @@
+[gd_scene load_steps=5 format=3 uid="uid://b0xgv7xpmobcq"]
+
+[ext_resource type="Texture2D" uid="uid://c24kr6ukgvl4" path="res://TestNpc1.png" id="1_8yqtg"]
+
+[sub_resource type="Animation" id="Animation_fo2km"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_13tdp"]
+resource_name = "hop"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, -2), Vector2(0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_hhph8"]
+_data = {
+"RESET": SubResource("Animation_fo2km"),
+"hop": SubResource("Animation_13tdp")
+}
+
+[node name="Npc" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(0.923549, 0.923549, 0.923549, 1)
+texture_filter = 1
+texture_repeat = 1
+texture = ExtResource("1_8yqtg")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "hop"
+libraries = {
+"": SubResource("AnimationLibrary_hhph8")
+}

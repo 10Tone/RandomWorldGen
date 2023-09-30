@@ -9,7 +9,7 @@ public partial class World : Node2D
 {
 	[Export()] private NodePath _tileMapPath;
 	[Export()] private MapResource _mapResource;
-	
+
 	[Export()] public Array<Vector2I> WaterTiles { get; private set; }
 	[Export()] public Array<Vector2I> SandTiles { get; private set; }
 	[Export()] public Array<Vector2I> GrassTiles { get; private set; }
